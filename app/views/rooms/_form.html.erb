@@ -1,0 +1,43 @@
+<%= form_with(model: room, local: true) do |form| %>
+  <% if room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+      <ul>
+        <% room.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :物件名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :賃料 %>
+    <%= form.text_field :price %>円
+  </div>
+
+  <div class="field">
+    <%= form.label :住所 %>
+    <%= form.text_field :addres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :築年数 %>
+    <%= form.text_field :old %>年
+  </div>
+
+  <div class="field">
+    <%= form.label :備考 %>
+    <%= form.text_area :content %>
+  </div>
+  <hr>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
