@@ -36,7 +36,9 @@
     <%= form.text_area :content %>
   </div>
   <hr>
+    <% n = 0 %>
     <%= form.fields_for :stations do | station | %>
+      <h3>最寄駅<%= n += 1 %></h3>
       <div class="field">
         <%= station.label :路線名 %>
         <%= station.text_field :route_name %>
@@ -48,8 +50,7 @@
       <div class="field">
         <%= station.label :徒歩分数 %>
         <%= station.text_field :walking_time %>分
-      </div>
-      
+      </div>      
   <% end %>
 
   <div class="actions">

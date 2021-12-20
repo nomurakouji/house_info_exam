@@ -20,10 +20,19 @@
   <%= @room.old %>
 </p>
 
+<%# 最寄駅の数 %>
+<%= form_with(model: @room, local: true) do |form| %>
+  <% n = 0 %>
+  <%= form.fields_for :stations do | station | %>
+  <% n += 1 %>
+  <% end %>
+  <h4>最寄駅の数:<%= n %></h4>
+<% end %>
+
 <p>
   <strong>備考:</strong>
   <%= @room.content %>
 </p>
 <hr>
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
+<%= link_to '編集', edit_room_path(@room) %> |
+<%= link_to '戻る', rooms_path %>

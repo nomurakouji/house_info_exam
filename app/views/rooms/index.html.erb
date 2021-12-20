@@ -22,9 +22,9 @@
         <td><%= room.addres %></td>
         <td><%= room.old %></td>
         <td><%= room.content %></td>
-        <td><%= link_to 'Show', room %></td>
-        <td><%= link_to 'Edit', edit_room_path(room) %></td>
-        <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', room %></td>
+        <td><%= link_to '編集', edit_room_path(room) %></td>
+        <td><%= link_to '削除', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Room', new_room_path %>
+<%= link_to '物件を登録する', new_room_path %>
