@@ -13,6 +13,8 @@ class RoomsController < ApplicationController
   # GET /rooms/new
   def new
     @room = Room.new
+    @room.stations.build
+    1.times { @room.stations.build }
   end
 
   # GET /rooms/1/edit
@@ -64,6 +66,6 @@ class RoomsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def room_params
-      params.require(:room).permit(:name, :price, :addres, :old, :content)
+      params.require(:room).permit(:name, :price, :addres, :old, :content, stations_attributes: [:id, :station_name, :route_name, :walking_time])
     end
 end
